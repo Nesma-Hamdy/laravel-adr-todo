@@ -47,7 +47,7 @@
       25 => 'App\\App\\Providers\\EloquentEventServiceProvider',
       26 => 'App\\App\\Providers\\EventServiceProvider',
       27 => 'App\\App\\Providers\\RouteServiceProvider',
-      28 => 'App\\Duties\\Providers\\DutyModelServiceProvider',
+      28 => 'App\\Duties\\Domain\\Providers\\DutyModelServiceProvider',
     ),
     'aliases' => 
     array (

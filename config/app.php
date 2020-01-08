@@ -180,7 +180,7 @@ return [
         App\App\Providers\EventServiceProvider::class,
         App\App\Providers\RouteServiceProvider::class,
 
-        App\Duties\Providers\DutyModelServiceProvider::class,
+        App\Duties\Domain\Providers\DutyModelServiceProvider::class,
 
     ],
 

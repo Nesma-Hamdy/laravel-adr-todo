@@ -38,7 +38,7 @@
     34 => 'App\\App\\Providers\\EloquentEventServiceProvider',
     35 => 'App\\App\\Providers\\EventServiceProvider',
     36 => 'App\\App\\Providers\\RouteServiceProvider',
-    37 => 'App\\Duties\\Providers\\DutyModelServiceProvider',
+    37 => 'App\\Duties\\Domain\\Providers\\DutyModelServiceProvider',
   ),
   'eager' => 
   array (
@@ -67,7 +67,7 @@
     22 => 'App\\App\\Providers\\EloquentEventServiceProvider',
     23 => 'App\\App\\Providers\\EventServiceProvider',
     24 => 'App\\App\\Providers\\RouteServiceProvider',
-    25 => 'App\\Duties\\Providers\\DutyModelServiceProvider',
+    25 => 'App\\Duties\\Domain\\Providers\\DutyModelServiceProvider',
   ),
   'deferred' => 
   array (
