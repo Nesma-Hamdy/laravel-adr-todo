@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTitlesTable extends Migration
+class CreateDutiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateTitlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('titles', function (Blueprint $table) {
+        Schema::create('duties', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-        });
-        Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('title_id')->nullable();
-            $table->foreign('title_id')->references('id')->on('titles');
+            $table->string("duty");
+            $table->boolean("is_completed")->default(false);
+            $table->unsignedBigInteger('user_id')->index();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateTitlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('titles');
+        Schema::dropIfExists('duties');
     }
 }
