@@ -2,8 +2,9 @@
 
 namespace App\Duties\Actions;
 
-use App\Duties\Domain\Services\DeleteDutyService;
+use App\Duties\Domain\Models\Duty;
 use App\Duties\Responders\DeleteDutyResponder;
+use App\Duties\Domain\Services\DeleteDutyService;
 
 class DeleteDutyAction
 {
@@ -12,10 +13,10 @@ class DeleteDutyAction
         $this->responder = $responder;
         $this->services = $services;
     }
-    public function __invoke($id)
+    public function __invoke(Duty $duty)
     {
         return $this->responder->withResponse(
-            $this->services->handle($id)
+            $this->services->handle($duty)
         )->respond();
     }
 }

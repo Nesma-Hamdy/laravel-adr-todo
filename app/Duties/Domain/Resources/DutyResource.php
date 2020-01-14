@@ -2,9 +2,9 @@
 
 namespace App\Duties\Domain\Resources;
 
-use Illuminate\Http\Resources\Json\JsonResource;
+use App\App\Http\Resources\BaseResource;
 
-class DutyResource extends JsonResource
+class DutyResource extends BaseResource
 {
     /**
      * Transform the resource into an array.
@@ -14,11 +14,10 @@ class DutyResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            'id' => $this->id,
+        return array_merge([
             'user_id' => $this->user_id,
             'is_completed' => $this->isCompleted(),
             'duty' => $this->duty,
-        ];
+        ], parent::toArray($request));
     }
 }

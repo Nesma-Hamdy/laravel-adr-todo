@@ -11,6 +11,7 @@ class DutyFormRequest extends APIRequest
     {
         return [
             'duty' => 'required|min:10|string',
+            'is_completed' => 'boolean'
         ];
     }
 }

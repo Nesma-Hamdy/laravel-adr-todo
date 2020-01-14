@@ -10,7 +10,6 @@ class DutyObserver
     public function creating(Duty $duty)
     {
         $duty->user_id = auth()->user()->id;
-
     }
     /**
      * Handle the duty "created" event.
