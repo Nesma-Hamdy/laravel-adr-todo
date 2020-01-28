@@ -9,7 +9,7 @@ class Duty extends Model
 {
 
     protected $fillable = [
-        'duty', 'is_completed',
+        'duty', 'is_completed', 'user_id'
     ];
 
     protected $casts = [
@@ -24,6 +24,5 @@ class Duty extends Model
     public function isCompleted()
     {
         return $this->is_completed;
-
     }
 }

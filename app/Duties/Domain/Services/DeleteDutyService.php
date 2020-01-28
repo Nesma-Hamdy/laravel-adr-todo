@@ -2,20 +2,15 @@
 
 namespace App\Duties\Domain\Services;
 
-use App\App\Domain\Payloads\GenericPayload;
 use App\App\Domain\Services\Service;
-use App\Duties\Domain\Repositories\DutyRepository;
+use App\App\Domain\Payloads\GenericPayload;
 
 class DeleteDutyService extends Service
 {
-    protected $duties;
-    public function __construct(DutyRepository $duties)
+
+    public function handle($duty = null)
     {
-        $this->duties = $duties;
-    }
-    public function handle($id = null)
-    {
-        if ($this->duties->delete($id)) {
+        if ($duty->delete()) {
             return new GenericPayload([
                 'message' => 'Duty Has been deleted successfully !',
             ], 200);

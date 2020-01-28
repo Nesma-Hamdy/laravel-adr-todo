@@ -2,9 +2,10 @@
 
 namespace App\Duties\Actions;
 
+use App\Duties\Domain\Models\Duty;
+use App\Duties\Responders\EditDutyResponder;
 use App\Duties\Domain\Requests\DutyFormRequest;
 use App\Duties\Domain\Services\EditDutyService;
-use App\Duties\Responders\EditDutyResponder;
 
 class EditDutyAction
 {
@@ -13,10 +14,10 @@ class EditDutyAction
         $this->responder = $responder;
         $this->services = $services;
     }
-    public function __invoke($id, DutyFormRequest $request)
+    public function __invoke(Duty $duty, DutyFormRequest $request)
     {
         return $this->responder->withResponse(
-            $this->services->handle($id, $request->all())
+            $this->services->handle($duty, $request->validated())
         )->respond();
     }
 }
